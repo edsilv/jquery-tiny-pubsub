@@ -8,17 +8,37 @@
 
 (function($) {
 
-  var o = $({});
+  var o = null;
+
+  $.initPubSub = function() {
+    o = $({});
+  };
 
   $.subscribe = function() {
+    if (!o) {
+      $.initPubSub();
+    }
+
     o.on.apply(o, arguments);
   };
 
   $.unsubscribe = function() {
+    if (!o) {
+      $.initPubSub();
+    }
+
     o.off.apply(o, arguments);
   };
 
+  $.disposePubSub = function() {
+    o = null;
+  };
+
   $.publish = function() {
+    if (!o) {
+      $.initPubSub();
+    }
+
     o.trigger.apply(o, arguments);
   };
 
