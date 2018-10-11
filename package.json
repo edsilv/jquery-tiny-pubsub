@@ -1,6 +1,6 @@
 {
-  "name": "jquery-tiny-pubsub",
-  "version": "0.7.2",
+  "name": "@edsilv/jquery-tiny-pubsub",
+  "version": "0.7.3",
   "engines": {
     "node": ">= 0.8.0"
   },
